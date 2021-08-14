@@ -8,7 +8,7 @@ interface IProps {
 interface IState {
     count: number;
 }
-
+// this is a comment
 export default class LCM extends React.Component<IProps,IState> {
     constructor(props: IProps){
         super(props);
