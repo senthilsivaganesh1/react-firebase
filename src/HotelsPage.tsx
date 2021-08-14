@@ -13,10 +13,10 @@ export default function HotelsPage() {
     },[dispatch]);
 
     switch(statusizedHotel.status) {
-        case Status.Success : return <div> Success</div>        
+        case Status.Success : return <div> Success ...</div>        
         // case Status.Success : return <div> Loading</div>
         case Status.Failure : return <div> Failure</div>    
 
     }
-    return <div>Loading</div>
+    return <div>Loading ...</div>
 }
