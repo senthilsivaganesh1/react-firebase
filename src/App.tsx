@@ -1,7 +1,7 @@
 // import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Redirect, Route} from 'react-router-dom';
 import { ScreenA } from './screenA';
 import { ScreenB } from './screenB';
 import { ScreenC } from './screenC';
@@ -46,6 +46,7 @@ import HotelsPage  from './HotelsPage';
       <Route exact={true} path='/UseContextParent' component={UseContextParent}/>
       <Route exact={true} path='/ReducerUIExample' component={ReducerUIExample}/>
       <Route exact={true} path='/LCM' render={renderLCM}/>
+      <Route exact={true} path='/' render={() => <Redirect to="/Hotel"/>}/>
 
     </BrowserRouter>
     {/* <ClassTest message={"this is class based component"}/> */}

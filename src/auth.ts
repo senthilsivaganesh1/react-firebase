@@ -1,38 +1,48 @@
 import firebase from "firebase/app";
 
-export async function signUp(displayName: string, email: string, password: string):Promise<string|undefined> {
+export enum Status {
+    NotStarted, Loading, Success, Failure
+}
+
+export interface IStatusizedMessage {
+    message:string|undefined,
+    status:Status
+
+}
+
+export async function signUp(displayName: string, email: string, password: string):Promise<IStatusizedMessage> {
     try {
         const response = await firebase.auth().createUserWithEmailAndPassword(email,password);
         await response.user?.updateProfile({displayName});
-        return response.user?.uid
+        return {status: Status.Success, message:response.user?.uid}
     }
     catch(error) {
         console.log(error.message);
-        return error.message;
+        return {status: Status.Failure, message:error.message};
     }
     
 }
 
-export async function login(email: string, password: string):Promise<string|undefined> {
+export async function login(email: string, password: string):Promise<IStatusizedMessage> {
     try {
         const response = await firebase.auth().signInWithEmailAndPassword(email,password);        
-        return response.user?.uid
+        return {status: Status.Success, message:response.user?.uid};
     }
     catch(error) {
         console.log(error.message);
-        return error.message;
+        return {status: Status.Failure, message:error.message};
     }
     
 }
-export async function signOut():Promise<boolean> {
+export async function signOut():Promise<IStatusizedMessage> {
     try {
         //const response = await firebase.auth().signOut();
         await firebase.auth().signOut();
-        return true;
+        return {status: Status.Success, message:""};
     }
     catch(error) {
         console.log(error.messge);
-        return error.message;
+        return {status: Status.Failure, message:error.message};
     }
     
 }

@@ -1,4 +1,4 @@
-interface IHotel {
+export interface IHotel {
     name: string,
     featured_image: string,
     cuisines: string,
