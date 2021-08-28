@@ -54,8 +54,9 @@ export  function Login() {
                 pattern: {value: /.+@.*\..*/, message:"email pattern is wrong"}
             })}
             className={classes.item}
+            data-testid="email"
             required
-            id="outlined-required"
+            id="email"
             label="Email address"
             name="email"
             variant="outlined"
@@ -71,8 +72,9 @@ export  function Login() {
             error={errors.password ? true : false}
             helperText={errors.password?.message}
             className={classes.item}
+            data-testid="password"
             required
-            id="filled-password-input"
+            id="password"
             label="Password"
             type="password"
             autoComplete="current-password"
@@ -81,8 +83,8 @@ export  function Login() {
 
            
             <div className={classes.buttons}>
-               <Fab color="primary" type="submit" className={classes.item}> Submit </Fab>
-               <Fab color="secondary" onClick={()=>reset()} className={classes.item}>reset</Fab>
+               <Fab color="primary" type="submit" className={classes.item} id="submit" data-testid="submit"> Submit </Fab>
+               <Fab color="secondary" data-testid="reset" id="reset"  onClick={()=>reset()} className={classes.item}>reset</Fab>
             </div>
 
                         

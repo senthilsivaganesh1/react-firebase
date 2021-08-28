@@ -1,13 +1,14 @@
 
 import React from "react";
-import { IHotel, IHotelAction, IStatusizedHotel, Status } from "./HotelReducer";
+// eslint-disable-next-line
+import { IHotel } from "./HotelReducer";
 import SearchIcon from "@material-ui/icons/Search";
+// eslint-disable-next-line
 import {
   AppBar,
   Button,
   createStyles,
-  fade,
-  Grid,
+  fade,  
   InputBase,
   makeStyles,
   Theme,

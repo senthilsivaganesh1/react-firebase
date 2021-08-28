@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimpleJest match snapshot testing 1`] = `
+<body>
+  <div>
+    <input
+      aria-label="input"
+      data-testid="input"
+      type="text"
+    />
+    <label
+      data-testid="output"
+    >
+      hello 
+    </label>
+  </div>
+</body>
+`;

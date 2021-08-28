@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { signOut, Status } from "./auth";
 import { userContext } from './UserProvider'
 import { useHistory } from "react-router-dom";
-import { Fab, makeStyles, TextField, Typography, Button } from "@material-ui/core";
+import { Fab, makeStyles, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles({
     

@@ -19,7 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "no-unused-vars": false
+    "types":["node","jest"]    
   },
   "include": [
     "src"

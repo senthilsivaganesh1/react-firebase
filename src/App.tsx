@@ -17,6 +17,8 @@ import ReactHookForm from './ReactHookForm';
 import { Profile } from './Profile';
 import { Login } from './Login';
 import HotelsPage  from './HotelsPage';
+import SimpleJest from './SimpleJest';
+import ApiMock from './ApiMock';
 
  function App() {
   // const history = useHistory();
@@ -31,6 +33,8 @@ import HotelsPage  from './HotelsPage';
     {/* <button onClick={()=>history.push("/a")}>go to a page</button>
     <button onClick={()=>history.goBack()}> back button</button> */}
     <BrowserRouter>
+    <Route exact={true} path='/ApiMock' component={ApiMock}></Route>
+    <Route exact={true} path='/SimpleJest' component={SimpleJest}></Route>
     <Route exact={true} path='/hotel' component={HotelsPage}></Route>
     <Route exact={true} path='/login' component={Login}></Route>
     <Route exact={true} path='/profile' component={Profile}></Route>

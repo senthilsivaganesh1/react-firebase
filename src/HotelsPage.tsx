@@ -1,4 +1,4 @@
-import { createStyles, Grid, makeStyles, Theme, CircularProgress, InputBase } from "@material-ui/core";
+import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
@@ -7,7 +7,7 @@ import HotelCard from "./HotelCard";
 import { IHotel, IHotelAction, IStatusizedHotel, Status } from "./HotelReducer";
 import { AppState } from "./ReducerSetup";
 import LoadingSpinner from './LoadingSpinner'
-import SearchIcon from "@material-ui/icons/Search";
+// import SearchIcon from "@material-ui/icons/Search";
 import HotelAppBar from "./HotelAppBar";
 
 
@@ -54,22 +54,22 @@ function renderPage(originalHotels: IHotel[], filteredHotels: IHotel[], setFilte
     )
 }
 
-function renderSearch(originalHotels: IHotel[],  setFilteredHotels: React.Dispatch<React.SetStateAction<IHotel[]>>) {
-    return (<div>
-        <div>
-            <SearchIcon />
-        </div>
-        <InputBase
-            placeholder="Search.."
-            classes={{
+// function renderSearch(originalHotels: IHotel[],  setFilteredHotels: React.Dispatch<React.SetStateAction<IHotel[]>>) {
+//     return (<div>
+//         <div>
+//             <SearchIcon />
+//         </div>
+//         <InputBase
+//             placeholder="Search.."
+//             classes={{
 
-            }}
-            inputProps={{ "aria-label": "search" }}
-            onChange={(event) => setFilteredHotels(originalHotels.filter(x => x.name.toLowerCase().includes(event.target.value.toLowerCase())))}
-        />
-    </div>
-    );
-}
+//             }}
+//             inputProps={{ "aria-label": "search" }}
+//             onChange={(event) => setFilteredHotels(originalHotels.filter(x => x.name.toLowerCase().includes(event.target.value.toLowerCase())))}
+//         />
+//     </div>
+//     );
+// }
 
 
 function renderHotels(hotels: IHotel[], className: string) {
