@@ -2,7 +2,7 @@ import { Fab, makeStyles, TextField, Typography } from "@material-ui/core";
 import { useState } from "react";
 import {useForm} from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import { IStatusizedMessage, login, signUp, Status } from "./auth";
+import { IStatusizedMessage, signUp, Status } from "./auth";
 
 const useStyles = makeStyles({
     errorMessage: {
